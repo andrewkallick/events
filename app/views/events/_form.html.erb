@@ -1,0 +1,187 @@
+<% was_validated = event.errors.any? %>
+
+<%= form_with(model: event, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for start_time start -->
+  <div class="form-group">
+    <% start_time_class = "form-control" %>
+    <% start_time_was_invalid = event.errors.include?(:start_time) %>
+
+    <% if was_validated %>
+      <% if start_time_was_invalid %>
+        <% start_time_class << " is-invalid" %>
+      <% else %>
+        <% start_time_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :start_time %>
+    <!-- Input for start_time start -->
+    <%= f.datetime_select :start_time, class: start_time_class, placeholder: "Enter start time" %>
+    <!-- Input for start_time end -->
+    <% if start_time_was_invalid %>
+      <% event.errors.full_messages_for(:start_time).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for start_time end -->
+  <!-- Label and input for end_time start -->
+  <div class="form-group">
+    <% end_time_class = "form-control" %>
+    <% end_time_was_invalid = event.errors.include?(:end_time) %>
+
+    <% if was_validated %>
+      <% if end_time_was_invalid %>
+        <% end_time_class << " is-invalid" %>
+      <% else %>
+        <% end_time_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :end_time %>
+    <!-- Input for end_time start -->
+    <%= f.datetime_select :end_time, class: end_time_class, placeholder: "Enter end time" %>
+    <!-- Input for end_time end -->
+    <% if end_time_was_invalid %>
+      <% event.errors.full_messages_for(:end_time).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for end_time end -->
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <% user_class = "form-control" %>
+    <% user_was_invalid = event.errors.include?(:user) %>
+
+    <% if was_validated %>
+      <% if user_was_invalid %>
+        <% user_class << " is-invalid" %>
+      <% else %>
+        <% user_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id %>
+    <!-- Input for user_id start -->
+    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <!-- Input for user_id end -->
+    <% if user_was_invalid %>
+      <% event.errors.full_messages_for(:user).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id end -->
+  <!-- Label and input for going start -->
+  <div class="form-group">
+    <% going_class = "form-control" %>
+    <% going_was_invalid = event.errors.include?(:going) %>
+
+    <% if was_validated %>
+      <% if going_was_invalid %>
+        <% going_class << " is-invalid" %>
+      <% else %>
+        <% going_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :going %>
+    <!-- Input for going start -->
+    <%= f.number_field :going, class: going_class, placeholder: "Enter going" %>
+    <!-- Input for going end -->
+    <% if going_was_invalid %>
+      <% event.errors.full_messages_for(:going).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for going end -->
+  <!-- Label and input for interested start -->
+  <div class="form-group">
+    <% interested_class = "form-control" %>
+    <% interested_was_invalid = event.errors.include?(:interested) %>
+
+    <% if was_validated %>
+      <% if interested_was_invalid %>
+        <% interested_class << " is-invalid" %>
+      <% else %>
+        <% interested_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :interested %>
+    <!-- Input for interested start -->
+    <%= f.number_field :interested, class: interested_class, placeholder: "Enter interested" %>
+    <!-- Input for interested end -->
+    <% if interested_was_invalid %>
+      <% event.errors.full_messages_for(:interested).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for interested end -->
+  <!-- Label and input for not_interested start -->
+  <div class="form-group">
+    <% not_interested_class = "form-control" %>
+    <% not_interested_was_invalid = event.errors.include?(:not_interested) %>
+
+    <% if was_validated %>
+      <% if not_interested_was_invalid %>
+        <% not_interested_class << " is-invalid" %>
+      <% else %>
+        <% not_interested_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :not_interested %>
+    <!-- Input for not_interested start -->
+    <%= f.number_field :not_interested, class: not_interested_class, placeholder: "Enter not interested" %>
+    <!-- Input for not_interested end -->
+    <% if not_interested_was_invalid %>
+      <% event.errors.full_messages_for(:not_interested).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for not_interested end -->
+  <!-- Label and input for comment_id start -->
+  <div class="form-group">
+    <% comment_class = "form-control" %>
+    <% comment_was_invalid = event.errors.include?(:comment) %>
+
+    <% if was_validated %>
+      <% if comment_was_invalid %>
+        <% comment_class << " is-invalid" %>
+      <% else %>
+        <% comment_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :comment_id %>
+    <!-- Input for comment_id start -->
+    <%= f.number_field :comment_id, class: comment_class, placeholder: "Enter comment" %>
+    <!-- Input for comment_id end -->
+    <% if comment_was_invalid %>
+      <% event.errors.full_messages_for(:comment).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for comment_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
