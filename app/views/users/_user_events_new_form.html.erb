@@ -1,0 +1,70 @@
+<!-- Form event start -->
+<%= form_with(model: @event, local: true) do |f| %>
+<!-- Form event end -->
+
+  <!-- Label and input for start_time start -->
+  <div class="form-group">
+    <%= f.label :start_time %>
+    <!-- Input for start_time start -->
+    <%= f.datetime_select :start_time, class: "form-control" %>
+    <!-- Input for start_time end -->
+  </div>
+  <!-- Label and input for start_time end -->
+
+  <!-- Label and input for end_time start -->
+  <div class="form-group">
+    <%= f.label :end_time %>
+    <!-- Input for end_time start -->
+    <%= f.datetime_select :end_time, class: "form-control" %>
+    <!-- Input for end_time end -->
+  </div>
+  <!-- Label and input for end_time end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for going start -->
+  <div class="form-group">
+    <%= f.label :going %>
+
+    <!-- Input for going start -->
+    <%= f.text_field :going, class: "form-control" %>
+    <!-- Input for going end -->
+  </div>
+  <!-- Label and input for going end -->
+
+  <!-- Label and input for interested start -->
+  <div class="form-group">
+    <%= f.label :interested %>
+
+    <!-- Input for interested start -->
+    <%= f.text_field :interested, class: "form-control" %>
+    <!-- Input for interested end -->
+  </div>
+  <!-- Label and input for interested end -->
+
+  <!-- Label and input for not_interested start -->
+  <div class="form-group">
+    <%= f.label :not_interested %>
+
+    <!-- Input for not_interested start -->
+    <%= f.text_field :not_interested, class: "form-control" %>
+    <!-- Input for not_interested end -->
+  </div>
+  <!-- Label and input for not_interested end -->
+
+  <!-- Label and input for comment_id start -->
+  <div class="form-group">
+    <%= f.label :comment_id %>
+
+    <!-- Input for comment_id start -->
+    <%= f.text_field :comment_id, class: "form-control" %>
+    <!-- Input for comment_id end -->
+  </div>
+  <!-- Label and input for comment_id end -->
+
+  <%= f.submit "Create event", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
