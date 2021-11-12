@@ -17,5 +17,4 @@ class EventResource < ApplicationResource
   belongs_to :user
 
   # Indirect associations
-
 end
